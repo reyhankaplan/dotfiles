@@ -23,3 +23,7 @@ keymap('n', '<C-h>', '<C-w>h')
 keymap('n', '<C-j>', '<C-w>j')
 keymap('n', '<C-k>', '<C-w>k')
 keymap('n', '<C-l>', '<C-w>l')
+
+-- Buffer navigation
+keymap('n', '<M-p>', '<Cmd>bprevious<CR>')
+keymap('n', '<M-n>', '<Cmd>bnext<CR>')

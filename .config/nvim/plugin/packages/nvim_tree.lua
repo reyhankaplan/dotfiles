@@ -24,3 +24,4 @@ nvim_tree.setup({
 })
 
 keymap('n', '<Space>f', '<Cmd>NvimTreeToggle<CR>', { silent = true })
+keymap('n', '<Space>F', '<Cmd>NvimTreeFindFile<CR>', { silent = true })
