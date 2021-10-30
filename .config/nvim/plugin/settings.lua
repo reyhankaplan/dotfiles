@@ -1,6 +1,8 @@
 local opt = vim.opt
 local cmd = vim.cmd
 
+vim.g.material_style = "deep ocean"
+
 opt.termguicolors = true -- Enables 24-bit RGB color support.
 cmd('colorscheme material') -- Load colorscheme
 
