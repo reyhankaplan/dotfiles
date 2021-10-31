@@ -43,3 +43,6 @@
 [submodule "plenary"]
 	path = .config/nvim/pack/bundle/start/plenary
 	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "nvim-colorizer"]
+	path = .config/nvim/pack/bundle/start/nvim-colorizer
+	url = https://github.com/norcalli/nvim-colorizer.lua
