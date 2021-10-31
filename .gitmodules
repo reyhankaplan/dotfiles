@@ -37,3 +37,9 @@
 [submodule "bufdelete"]
 	path = .config/nvim/pack/bundle/start/bufdelete
 	url = https://github.com/famiu/bufdelete.nvim
+[submodule "gitsigns"]
+	path = .config/nvim/pack/bundle/start/gitsigns
+	url = https://github.com/lewis6991/gitsigns.nvim
+[submodule "plenary"]
+	path = .config/nvim/pack/bundle/start/plenary
+	url = https://github.com/nvim-lua/plenary.nvim
