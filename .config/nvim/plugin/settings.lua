@@ -10,6 +10,9 @@ opt.number = true -- Show line numbers
 opt.cursorline = true -- Highlight cursor line
 opt.ignorecase = true -- Ignore case search
 opt.smartcase = true -- Smart search
+opt.tabstop = 2 -- Number of spaces that a <Tab> in the file counts for.
+opt.shiftwidth = 0 -- Number of spaces to use for each step of auto indent.
+opt.softtabstop = -1 -- Number of spaces that a <Tab> counts.
 
 -- UI Characters
 opt.fillchars = {
