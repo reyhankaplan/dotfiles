@@ -34,3 +34,6 @@
 [submodule "sandwich"]
 	path = .config/nvim/pack/bundle/start/sandwich
 	url = https://github.com/machakann/vim-sandwich
+[submodule "bufdelete"]
+	path = .config/nvim/pack/bundle/start/bufdelete
+	url = https://github.com/famiu/bufdelete.nvim
