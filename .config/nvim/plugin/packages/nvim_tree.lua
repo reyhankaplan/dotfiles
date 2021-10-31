@@ -37,7 +37,7 @@ nvim_tree.setup({
     auto_resize = true,
     mappings = {
       list = {
-				{ key = { 'l', '<CR>', '<2-LeftMouse>' }, cb = tree_cb('edit') },
+        { key = { 'l', '<CR>', '<2-LeftMouse>' }, cb = tree_cb('edit') },
         { key = 'L', cb = tree_cb('cd') },
         { key = '<C-s>', cb = tree_cb('split') },
         { key = '<C-v>', cb = tree_cb('vsplit') },

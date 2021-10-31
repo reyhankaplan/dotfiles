@@ -7,7 +7,7 @@ alias g='git'
 
 # Git aliases
 foreach aliaskey (a b bl c co d ds dt dts f l ld r rd s sm) {
-	alias g$aliaskey="git $aliaskey"
+  alias g$aliaskey="git $aliaskey"
 }
 unset aliaskey
 

@@ -1,8 +1,8 @@
 # Add prompt to fpath.
 if [[ -d "$ZDOTDIR/plugins/pure" ]] {
-	fpath=($fpath "$ZDOTDIR/plugins/pure")
+  fpath=($fpath "$ZDOTDIR/plugins/pure")
 } else {
-	return 1
+  return 1
 }
 
 # Initialize the prompt system.
