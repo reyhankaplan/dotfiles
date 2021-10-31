@@ -6,7 +6,26 @@ g.nvim_tree_show_icons = {
   git = 0,
   folders = 1,
   files = 1,
-  folder_arrows = 0,
+}
+
+-- Customize icons.
+g.nvim_tree_icons = {
+  default = '',
+  symlink = '',
+  git = {
+    unstaged = '',
+    staged = '',
+    unmerged = '',
+    renamed = '',
+    deleted = '',
+    untracked = '',
+    ignored = '',
+  },
+  folder = {
+    default = '',
+    open = '',
+    symlink = '',
+  },
 }
 
 local nvim_tree = require('nvim-tree')
@@ -15,6 +34,7 @@ local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 nvim_tree.setup({
   hijack_cursor = true,
   view = {
+    auto_resize = true,
     mappings = {
       list = {
         { key = 'l', cb = tree_cb("edit") },
