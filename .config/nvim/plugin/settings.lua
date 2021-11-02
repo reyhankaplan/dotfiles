@@ -6,6 +6,11 @@ vim.g.material_style = "deep ocean"
 opt.termguicolors = true -- Enables 24-bit RGB color support
 cmd('colorscheme material') -- Load colorscheme
 
+opt.mouse = table.concat({ -- Enable mouse support for normal and visual mode
+  'n',
+  'v'
+})
+
 opt.number = true -- Show line numbers
 opt.cursorline = true -- Highlight cursor line
 opt.ignorecase = true -- Ignore case search
