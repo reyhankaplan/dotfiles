@@ -68,6 +68,12 @@ export LANGUAGE='en_US.UTF-8'
 export MANWIDTH='100' # Fixed line width for man pages.
 export MANPAGER="less"
 
+# gcal
+export GCAL="\
+  --highlighting=\e[41m:\e[0m:\e[33m:\e[0m \
+  --pager \
+  --starting-day=Monday"
+
 # less
 export LESS=" \
   --ignore-case \
