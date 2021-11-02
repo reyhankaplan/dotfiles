@@ -36,17 +36,15 @@ map zi set info size:time
 map zs set info size
 map zv :set nopreview; set ratios 1; set info size:time
 map zV :set ratios 1:1:1; set preview; set info size
-map bw cd ~/Downloads
-map bo cd ~/Work
-map bd cd ~/Documents
-map bp cd ~/Projects
+map bd cd ~/Downloads
+map bw cd ~/Work
+map bp cd ~/Personal/projects
 map bc cd ~/.config
-map bl cd ~/.local/share
 map ud clear
 map uy clear
 map u<space> unselect
 map Dy trash
-map R $vidir
+map R refresh
 map i $~/.config/lf/previewer.zsh "$f" | less
 map o push :$<space>"$f"<home><right>
 map cf push :%touch<space>''<left>
