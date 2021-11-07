@@ -27,3 +27,7 @@ keymap('n', '<C-l>', '<C-w>l')
 -- Buffer navigation
 keymap('n', '<M-p>', '<Cmd>bprevious<CR>')
 keymap('n', '<M-n>', '<Cmd>bnext<CR>')
+
+-- Stay in Visual mode on indent
+keymap('x', '>', '>gv')
+keymap('x', '<', '<gv')
