@@ -61,7 +61,15 @@ material.setup({
     -- NvimTree
     NvimTreeIndentMarker = { fg = colors.selection },
     NvimTreeNormal = { bg = colors.contrast },
-    NvimTreeFolderIcon = {},
+    NvimTreeFolderIcon = { fg = colors.fg },
+    NvimTreeFolderName = { fg = colors.blue },
+    NvimTreeOpenedFolderName = { fg = colors.blue, style = 'italic' },
+    NvimTreeGitDirty = { fg = colors.yellow },
+    NvimTreeGitStaged = { fg = colors.green },
+    NvimTreeGitMerge = { fg = colors.red },
+    NvimTreeGitRenamed = { fg = colors.orange },
+    NvimTreeGitNew = { fg = colors.pink },
+    NvimTreeGitDeleted = { fg = colors.red },
 
     -- CSS
     cssAttrComma = { fg = colors.fg },
