@@ -12,3 +12,7 @@ foreach aliaskey (a b bl c co d ds dt dts f l ld r rd s sm) {
 unset aliaskey
 
 alias http-server="browser-sync start --config ~/.config/browsersync/config.js *"
+
+alias l="ledger"
+alias lb="ledger balance '^assets' '^liabilities' --empty"
+alias le='cd ~/Projects/sync && git pull --ff-only; nvim +"normal! Gzz" ~/Projects/sync/finance/journal-$(date +%Y).ledger'
