@@ -15,4 +15,4 @@ alias http-server="browser-sync start --config ~/.config/browsersync/config.js *
 
 alias l="ledger"
 alias lb="ledger balance '^assets' '^liabilities' --empty"
-alias le='cd ~/Projects/sync && git pull --ff-only; nvim +"normal! Gzz" ~/Projects/sync/finance/journal-$(date +%Y).ledger'
+alias le='cd ~/Projects/finance && git pull --ff-only; nvim +"normal! Gzz" ~/Projects/finance/$(date +%Y)/$(date +%m).ledger'
