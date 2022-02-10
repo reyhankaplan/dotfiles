@@ -21,6 +21,8 @@ opt.softtabstop = -1 -- Number of spaces that a <Tab> counts
 opt.expandtab = true -- Use spaces instead of tab characters
 opt.signcolumn = 'yes' -- Always draw the sign column even if there is no sign in it
 opt.laststatus = 0 -- Disable status line
+opt.undolevels = 100000 -- Maximum number of changes that can be undone.
+opt.undofile = true -- Persist undo history to an undo file.
 
 opt.list = true
 opt.listchars = {
