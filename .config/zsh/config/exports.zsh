@@ -19,35 +19,32 @@ if ([[ $OSTYPE != 'linux-android' ]]) {
 
 # macOS specific exports.
 if ([[ $OSTYPE =~ 'darwin*' ]]) {
-  export ANDROID_HOME="$HOME/Library/Android/sdk"
-  export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
   export VSCODE_HOME="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-  path=(
-    '/usr/local/opt/coreutils/libexec/gnubin'
-    '/usr/local/opt/findutils/libexec/gnubin'
-    '/usr/local/opt/gnu-sed/libexec/gnubin'
-    '/usr/local/opt/grep/libexec/gnubin'
-    '/usr/local/opt/curl/bin'
-    '/usr/local/opt/ncurses/bin'
-    '/usr/local/opt/openssl/bin'
-    '/usr/local/opt/python/libexec/bin'
-    "$ANDROID_HOME/emulator"
-    "$ANDROID_HOME/tools"
-    "$ANDROID_HOME/tools/bin"
-    "$ANDROID_HOME/platform-tools"
-    "$JAVA_HOME"
-    "$VSCODE_HOME"
-    $path
-  )
+  export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+  export ANDROID_EMULATOR=$ANDROID_SDK_ROOT/emulator
+  export ANDROID_PLATFORM_TOOLS=$ANDROID_SDK_ROOT/platform-tools
 
-  manpath=(
-    '/usr/local/opt/coreutils/libexec/gnuman'
-    '/usr/local/opt/findutils/libexec/gnuman'
-    '/usr/local/opt/gnu-sed/libexec/gnuman'
-    '/usr/local/opt/grep/libexec/gnuman'
-    '/usr/local/opt/curl/share/man'
-    $manpath
+  local prefix=''
+
+  if ([[ "$(uname -m)" == 'arm64' ]]) {
+    prefix='/opt/homebrew'
+  } else {
+    prefix='/usr/local'
+  }
+
+  path=(
+    '/opt/homebrew/bin'
+    "$prefix/opt/coreutils/libexec/gnubin"
+    "$prefix/opt/findutils/libexec/gnubin"
+    "$prefix/opt/gnu-sed/libexec/gnubin"
+    "$prefix/opt/gnu-tar/libexec/gnubin"
+    "$prefix/opt/grep/libexec/gnubin"
+    "$prefix/opt/curl/bin"
+    $VSCODE_HOME
+    $ANDROID_EMULATOR
+    $ANDROID_PLATFORM_TOOLS
+    $path
   )
 }
 
