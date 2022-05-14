@@ -17,7 +17,7 @@ function lpush() {
 }
 
 function auth() {
-  oathtool --base32 --totp $(<"$HOME/.config/auth/totp-$1.txt")
+  oathtool --base32 --totp "$(<$HOME/.config/auth/totp-$*.txt)"
 }
 
 # 
