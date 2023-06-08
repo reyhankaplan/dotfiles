@@ -2,61 +2,62 @@
     pager = less
 
 [push]
-	default = nothing
-	followtags = true
+  default = nothing
+  followtags = true
 
 [url "git@github.com:"]
-	insteadOf = "g:"
-	pushInsteadOf = "g:"
+  insteadOf = "g:"
+  pushInsteadOf = "g:"
 
 [user]
-	name = Reyhan Unal
-	email = rreyhanunal@gmail.com
+  name = Reyhan Kaplan
+  email = me@reyhan.dev
 
-[includeIf "gitdir:~/Work/"]
-	path = work.gitconfig
+[includeIf "gitdir:~/Documents/Work"]
+  path = work.gitconfig
 
 [status]
-	short = true
-	branch = true
+  short = true
+  branch = true
 
 [format]
-	pretty = log-full
+  pretty = log-full
 
 [pretty]
-	log-default = format:%C(auto)%h%C(reset) %C(blue)%ad%C(reset) %C(cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(yellow)●%C(reset) %s %C(241)%aN <%aE>%C(reset)%n%w(0,7,7)%+(trailers:only,unfold)
-	log-full = format:%C(auto)%h%C(reset)%C(auto)%d%C(reset)   %C(239)[P: %p] [T: %t]%C(reset)%n%C(white)Author:%C(reset)   %aN %C(241)<%aE>%C(reset)%n          %C(blue)%ad%C(reset) %C(cyan)(%ar)%C(reset)%n%C(white)Commit:%C(reset)   %cN %C(241)<%cE>%C(reset)   %C(239)[GPG: %G?% GK]%C(reset)%n          %C(blue)%cd%C(reset) %C(cyan)(%cr)%C(reset)%w(0,4,4)%n%n%C(bold)%s%C(reset)%n%n%-b%n%n%-N%n
-	reflog-default = format:%C(auto)%h%C(reset) %C(blue)%ad%C(reset) %C(cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(yellow)●%C(reset) %s %C(241)%aN <%aE>%C(reset)%n %C(yellow)○%C(reset) %C(bold yellow)(%C(magenta)%gd%C(bold yellow))%C(reset) %gs %C(241)%gN <%gE>%C(reset)%n%w(0,7,7)%+(trailers:only,unfold)
-	reflog-full = format:%C(auto)%h%C(reset) %C(bold yellow)(%C(magenta)%gd%C(bold yellow))%C(reset)%C(auto)%d%C(reset)   %C(239)[P: %p] [T: %t]%C(reset)%n%C(white)Author:%C(reset)   %aN %C(241)<%aE>%C(reset)%n          %C(blue)%ad%C(reset) %C(cyan)(%ar)%C(reset)%n%C(white)Commit:%C(reset)   %cN %C(241)<%cE>%C(reset)   %C(239)[GPG: %G?% GK]%C(reset)%n          %C(blue)%cd%C(reset) %C(cyan)(%cr)%C(reset)%n%C(white)Reflog:%C(reset)   %gN %C(241)<%gE>%C(reset)%n          %C(auto)%gs%C(reset)%w(0,4,4)%n%n%C(bold)%s%C(reset)%n%n%-b%n%n%-N%n
+  log-default = format:%C(auto)%h%C(reset) %C(blue)%ad%C(reset) %C(cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(yellow)●%C(reset) %s %C(241)%aN <%aE>%C(reset)%n%w(0,7,7)%+(trailers:only,unfold)
+  log-full = format:%C(auto)%h%C(reset)%C(auto)%d%C(reset)   %C(239)[P: %p] [T: %t]%C(reset)%n%C(white)Author:%C(reset)   %aN %C(241)<%aE>%C(reset)%n          %C(blue)%ad%C(reset) %C(cyan)(%ar)%C(reset)%n%C(white)Commit:%C(reset)   %cN %C(241)<%cE>%C(reset)   %C(239)[GPG: %G?% GK]%C(reset)%n          %C(blue)%cd%C(reset) %C(cyan)(%cr)%C(reset)%w(0,4,4)%n%n%C(bold)%s%C(reset)%n%n%-b%n%n%-N%n
+  reflog-default = format:%C(auto)%h%C(reset) %C(blue)%ad%C(reset) %C(cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(yellow)●%C(reset) %s %C(241)%aN <%aE>%C(reset)%n %C(yellow)○%C(reset) %C(bold yellow)(%C(magenta)%gd%C(bold yellow))%C(reset) %gs %C(241)%gN <%gE>%C(reset)%n%w(0,7,7)%+(trailers:only,unfold)
+  reflog-full = format:%C(auto)%h%C(reset) %C(bold yellow)(%C(magenta)%gd%C(bold yellow))%C(reset)%C(auto)%d%C(reset)   %C(239)[P: %p] [T: %t]%C(reset)%n%C(white)Author:%C(reset)   %aN %C(241)<%aE>%C(reset)%n          %C(blue)%ad%C(reset) %C(cyan)(%ar)%C(reset)%n%C(white)Commit:%C(reset)   %cN %C(241)<%cE>%C(reset)   %C(239)[GPG: %G?% GK]%C(reset)%n          %C(blue)%cd%C(reset) %C(cyan)(%cr)%C(reset)%n%C(white)Reflog:%C(reset)   %gN %C(241)<%gE>%C(reset)%n          %C(auto)%gs%C(reset)%w(0,4,4)%n%n%C(bold)%s%C(reset)%n%n%-b%n%n%-N%n
 
 [alias]
-	a = add
-	b = branch
-	c = commit
-	s = status
-	co = checkout
-	sm = submodule
-	dt = difftool
-	dts = difftool --staged
-	d = diff --stat=100,100 --patch
-	ds = diff --stat=100,100 --patch --staged
-	f = fetch
-	bl = !git --no-pager branch --verbose --all
-	remotes = remote --verbose
-	contributors = shortlog --summary --numbered --email
-	ctags = !.git/hooks/ctags
-	l = log --graph --all --date=iso8601 --pretty=log-default
-	ld = log --graph --all --date=iso8601 --pretty=log-full
-	r = reflog --date=iso8601 --pretty=reflog-default
-	rd = reflog --date=iso8601 --pretty=reflog-full
-	pr = "! \
-		function f() { \
-			git fetch --force --update-head-ok ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; \
-		}; f"
-	pr-clean = "! \
-		git for-each-ref refs/heads/pr/* --format='%(refname)' \
-		| sed s#refs/heads/## \
-		| xargs -I '{}' git branch --delete --force {}"
+  a = add
+  b = branch
+  c = commit
+  s = status
+  sm = submodule
+  sw = switch
+  dt = difftool
+  dts = difftool --staged
+  d = diff --stat=100,100 --patch
+  ds = diff --stat=100,100 --patch --staged
+  f = fetch
+  bl = !git --no-pager branch --verbose --all
+  remotes = remote --verbose
+  contributors = shortlog --summary --numbered --email
+  ctags = !.git/hooks/ctags
+  l = log --graph --all --date=iso8601 --pretty=log-default
+  ld = log --graph --all --date=iso8601 --pretty=log-full
+  r = reflog --date=iso8601 --pretty=reflog-default
+  rd = reflog --date=iso8601 --pretty=reflog-full
+  pr = "! \
+    function f() { \
+      git fetch --force --update-head-ok ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; \
+    }; f"
+  pr-clean = "! \
+    git for-each-ref refs/heads/pr/* --format='%(refname)' \
+    | sed s#refs/heads/## \
+    | xargs -I '{}' git branch --delete --force {}"
+  prune-merged = !git branch --merged | grep --invert-match --extended-regexp '\\*|main|master' | xargs -n 1 git branch --delete
 
 [color]
   ui = auto
@@ -78,9 +79,9 @@
   changed = yellow
   untracked = red
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [init]
-	defaultBranch = master
+  defaultBranch = master
