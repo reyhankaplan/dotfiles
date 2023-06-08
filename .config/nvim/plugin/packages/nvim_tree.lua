@@ -1,70 +1,90 @@
-local g = vim.g
-local keymap = require('reyhan.utils').keymap
-
-g.nvim_tree_git_hl = 1
-g.nvim_tree_show_icons = {
-  git = 0,
-  folders = 1,
-  files = 1,
-}
-
--- Customize icons.
-g.nvim_tree_icons = {
-  default = '',
-  symlink = '',
-  git = {
-    unstaged = '',
-    staged = '',
-    unmerged = '',
-    renamed = '',
-    deleted = '',
-    untracked = '',
-    ignored = '',
-  },
-  folder = {
-    default = '',
-    open = '',
-    symlink = '',
-  },
-}
-
+local keymap = vim.keymap
 local nvim_tree = require('nvim-tree')
-local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
 nvim_tree.setup({
-  update_focused_file = { enable = true },
+  update_cwd = true,
   hijack_cursor = true,
+  git = {
+    ignore = false,
+  },
+  actions = {
+    open_file = {
+      resize_window = true,
+    },
+  },
   view = {
-    auto_resize = true,
+    width = 32,
     mappings = {
+      custom_only = true,
       list = {
-        { key = { 'l', '<CR>', '<2-LeftMouse>' }, cb = tree_cb('edit') },
-        { key = 'L', cb = tree_cb('cd') },
-        { key = '<C-s>', cb = tree_cb('split') },
-        { key = '<C-v>', cb = tree_cb('vsplit') },
-        { key = '<C-t>', cb = tree_cb('tabnew') },
-        { key = 'h', cb = tree_cb('close_node') },
-        { key = 'i', cb = tree_cb('preview') },
-        { key = 'R', cb = tree_cb('refresh') },
-        { key = 'c', cb = tree_cb('create') },
-        { key = 'D', cb = tree_cb('remove') },
-        { key = 'r', cb = tree_cb('rename') },
-        { key = 'd', cb = tree_cb('cut') },
-        { key = 'y', cb = tree_cb('copy') },
-        { key = 'p', cb = tree_cb('paste') },
-        { key = 'gyn', cb = tree_cb('copy_name') },
-        { key = 'gyp', cb = tree_cb('copy_path') },
+        { key = { 'l', '<CR>', '<2-LeftMouse>' }, action = 'edit' },
+        { key = 'L', action = 'cd' },
+        { key = '<C-s>', action = 'split' },
+        { key = '<C-v>', action = 'vsplit' },
+        { key = '<C-t>', action = 'tabnew' },
+        { key = 'h', action = 'close_node' },
+        { key = '<Tab>', action = 'preview' },
+        { key = 'R', action = 'refresh' },
+        { key = 'c', action = 'create' },
+        { key = 'D', action = 'trash' },
+        { key = 'r', action = 'rename' },
+        { key = '<C-r>', action = 'full_rename' },
+        { key = 'd', action = 'cut' },
+        { key = 'y', action = 'copy' },
+        { key = 'p', action = 'paste' },
+        { key = 'P', action = 'bulk_move' },
+        { key = 'f', action = 'live_filter' },
+        { key = '-', action = 'collapse_all' },
+        { key = 'gyn', action = 'copy_name' },
+        { key = 'gyp', action = 'copy_path' },
         {
           key = 'gya',
-          cb = tree_cb('copy_absolute_path'),
+          action = 'copy_absolute_path',
         },
-        { key = 'H', cb = tree_cb('dir_up') },
-        { key = 's', cb = tree_cb('system_open') },
-        { key = 'q', cb = tree_cb('close') },
-      }
-    }
-  }
+        { key = 'H', action = 'dir_up' },
+        { key = 's', action = 'system_open' },
+        { key = '<Space>', action = 'toggle_mark' },
+        { key = 'K', action = 'toggle_file_info' },
+        { key = '<', action = 'first_sibling' },
+        { key = '>', action = 'last_sibling' },
+      },
+    },
+  },
+  renderer = {
+    highlight_git = true,
+    root_folder_modifier = ':t',
+    icons = {
+      glyphs = {
+        default = '',
+        symlink = '',
+        bookmark = '◉',
+        git = {
+          unstaged = '',
+          staged = '',
+          unmerged = '',
+          renamed = '',
+          deleted = '',
+          untracked = '',
+          ignored = '',
+        },
+        folder = {
+          default = '',
+          open = '',
+          symlink = '',
+        },
+      },
+      show = {
+        git = false,
+        file = true,
+        folder = true,
+        folder_arrow = false,
+      },
+    },
+    indent_markers = {
+      enable = true,
+    },
+  },
 })
 
-keymap('n', '<Space>f', '<Cmd>NvimTreeToggle<CR>', { silent = true })
-keymap('n', '<Space>F', '<Cmd>NvimTreeFindFile<CR>', { silent = true })
+keymap.set('n', '<Space>f', '<Cmd>NvimTreeToggle<CR>', { silent = true })
+keymap.set('n', '<Space>F', '<Cmd>NvimTreeFindFile<CR>z.', { silent = true })
