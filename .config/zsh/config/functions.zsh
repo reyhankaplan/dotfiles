@@ -6,16 +6,6 @@ function lf() {
     && cd "$(<$HOME/.local/share/lf/lastdir)" 2>/dev/null
 }
 
-##
-# Commit and push ledger journal updates.
-##
-function lpush() {
-  cd ~/Projects/finance && \
-    git add . && \
-    git commit --message='update journal file' && \
-    git push origin master
-}
-
 function auth() {
   oathtool --base32 --totp "$(<$HOME/.config/auth/totp-$*.txt)"
 }

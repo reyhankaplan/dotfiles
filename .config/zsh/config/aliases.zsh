@@ -6,13 +6,7 @@ alias v='nvim'
 alias g='git'
 
 # Git aliases
-foreach aliaskey (a b bl c co d ds dt dts f l ld r rd s sm) {
+foreach aliaskey (a b bl c d ds dt dts f l ld r rd s sm sw) {
   alias g$aliaskey="git $aliaskey"
 }
 unset aliaskey
-
-alias http-server="browser-sync start --config ~/.config/browsersync/config.js *"
-
-alias l="ledger"
-alias lb="ledger balance '^assets' '^liabilities' --empty"
-alias le='cd ~/Projects/finance && git pull --ff-only; nvim +"normal! Gzz" ~/Projects/finance/$(date +%Y)/$(date +%m).ledger'
