@@ -1,5 +1,5 @@
 [core]
-    pager = less
+  pager = less
 
 [push]
   default = nothing
