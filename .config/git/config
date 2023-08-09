@@ -45,8 +45,8 @@
   remotes = remote --verbose
   contributors = shortlog --summary --numbered --email
   ctags = !.git/hooks/ctags
-  l = log --graph --all --date=iso8601 --pretty=log-default
-  ld = log --graph --all --date=iso8601 --pretty=log-full
+  l = log --branches --remotes --tags --graph --date=iso8601 --pretty=log-default
+  ld = log --branches --remotes --tags --graph --date=iso8601 --pretty=log-full
   r = reflog --date=iso8601 --pretty=reflog-default
   rd = reflog --date=iso8601 --pretty=reflog-full
   pr = "! \
