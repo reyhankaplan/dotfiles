@@ -13,8 +13,11 @@
   name = Reyhan Kaplan
   email = me@reyhan.dev
 
-[includeIf "gitdir:~/Documents/Work"]
+[includeIf "gitdir:~/Documents/Work/"]
   path = work.gitconfig
+
+[includeIf "gitdir:~/Documents/Kutsan/"]
+  path = hubx.gitconfig
 
 [status]
   short = true
