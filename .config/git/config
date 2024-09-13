@@ -12,12 +12,10 @@
 [user]
   name = Reyhan Kaplan
   email = me@reyhan.dev
+  signingkey = 4592F58B
 
-[includeIf "gitdir:~/Documents/Work/"]
-  path = work.gitconfig
-
-[includeIf "gitdir:~/Documents/Kutsan/"]
-  path = hubx.gitconfig
+[includeIf "gitdir:~/Documents/Projects/Wavera/"]
+  path = wavera.gitconfig
 
 [status]
   short = true
@@ -25,6 +23,9 @@
 
 [format]
   pretty = log-full
+
+[commit]
+  gpgsign = true
 
 [pretty]
   log-default = format:%C(auto)%h%C(reset) %C(blue)%ad%C(reset) %C(cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(yellow)●%C(reset) %s %C(241)%aN <%aE>%C(reset)%n%w(0,7,7)%+(trailers:only,unfold)
